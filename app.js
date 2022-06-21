@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+app.use(express.static("public"));
+
+
+
 app.get("/home", (req, res) => {
   res.sendFile(__dirname + "/views/home.html"); //ruta absoluta del elemento
 });
@@ -13,4 +17,5 @@ app.get("/work", (req, res) => {
   res.sendFile(__dirname + "/views/work.html"); //ruta absoluta del elemento
 });
 
-app.listen(300, () => console.log("My first app listening on port 300"))
+// Server Started
+app.listen(300, () => console.log("My first app listening on port 300"));
