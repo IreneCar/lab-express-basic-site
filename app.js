@@ -12,3 +12,5 @@ app.get("/about", (req, res) => {
 app.get("/work", (req, res) => {
   res.sendFile(__dirname + "/views/work.html"); //ruta absoluta del elemento
 });
+
+app.listen(300, () => console.log("My first app listening on port 300"))
