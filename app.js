@@ -1,21 +1,18 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 
+// home route:
+app.get('/home', (request, response, next) => response.sendFile(__dirname + '/views/home.html'));
 
-app.get("/home", (req, res) => {
-  res.sendFile(__dirname + "/views/home.html"); //ruta absoluta del elemento
-});
+// about route:
+app.get('/about', (request, response, next) => response.sendFile(__dirname + '/views/about.html'));
 
-app.get("/about", (req, res) => {
-  res.sendFile(__dirname + "/views/about.html"); //ruta absoluta del elemento
-});
+// work route:
+app.get('/work', (request, response, next) => response.sendFile(__dirname + '/views/work.html'));
 
-app.get("/work", (req, res) => {
-  res.sendFile(__dirname + "/views/work.html"); //ruta absoluta del elemento
-});
 
 // Server Started
-app.listen(300, () => console.log("My first app listening on port 300"));
+app.listen(3000, () => console.log("My first app listening on port 3000"));
