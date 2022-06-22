@@ -5,7 +5,7 @@ app.use(express.static('public'));
 
 
 // home route:
-app.get('/home', (request, response, next) => response.sendFile(__dirname + '/views/home.html'));
+app.get('/', (request, response, next) => response.sendFile(__dirname + '/views/home.html'));
 
 // about route:
 app.get('/about', (request, response, next) => response.sendFile(__dirname + '/views/about.html'));
